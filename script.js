@@ -1,4 +1,4 @@
-initialise () {
+
 /*---------------- constants --------------*/
 let alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h',
         'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's',
@@ -16,16 +16,17 @@ let alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h',
 
 /*------------ app's state (variables) -----------*/
 
-
+const buttonsContainer = document.getElementById('buttons');
 
 
 /*----------- cached element references ----------*/
 
-  let showLives = document.getElementById("mylives");
-  let showCategory = document.getElementById("scatagory");
-  let getHint = document.getElementById("hint");
-  let showClue = document.getElementById("clue");
-
+alphabet.forEach(letter => {
+    const button = document.createElement('button');
+    button.textContent = letter;
+    button.addEventListener('click', () => handleButtonClick(letter));
+    buttonsContainer.appendChild(button);
+  });
 
 /*------------ event listeners -----------*/
 
@@ -33,18 +34,8 @@ let alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h',
 
 
 /*--------------- functions -----------*/
-// create alphabet ul
- let buttons = function () {
-    myButtons = document.getElementById('buttons');
-    letters = document.createElement('ul');
-
-    for (let i = 0; i < alphabet.length; i++) {
-      letters.id = 'alphabet';
-      list = document.createElement('li');
-      list.id = 'letter';
-      list.innerHTML = alphabet[i];
-      myButtons.appendChild(letters);
-      letters.appendChild(list);
-    }
+function handleButtonClick(letter) {
+    // Do something with the clicked letter
+    console.log(`Clicked letter: ${letter}`);
   }
-}
+  
