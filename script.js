@@ -37,6 +37,8 @@ const buttonsContainer = document.getElementById('buttons');
 const categoryNameElement = document.getElementById('categoryName');
 const clueElement = document.getElementById('clue');
 const hintButton = document.getElementById('hint');
+const holdElement = document.getElementById('hold');
+const myLivesElement = document.getElementById('mylives');
 
 /*----------- cached element references ----------*/
 
@@ -66,10 +68,9 @@ lives = 6;
 counter = 0;
 space = 0;
 guesses = [];
-
 render();
+createAlphabetButtons();
 }
-
 
 function handleHintButtonClick() {
 getHint = getRandomHint(chosenCategory.hints);
@@ -77,8 +78,24 @@ render();
 }
 
 function handleButtonClick(letter) {
-// Do something with the clicked letter
-console.log(`Clicked letter: ${letter}`);
+if (guesses.indexOf(letter) === -1) {
+guesses.push(letter);
+if (word.indexOf(letter) === -1) {
+lives--;
+} else {
+counter++;
+}
+}
+
+if (counter === word.length) {
+// Word guessed correctly
+disableAlphabetButtons();
+}
+
+if (lives === 0) {
+// Game over, word not guessed
+disableAlphabetButtons();
+}
 }
         
 function getRandomWord(wordArray) {
