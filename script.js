@@ -55,6 +55,7 @@ const hintButton = document.getElementById('hint');
 const holdElement = document.getElementById('hold');
 const myLivesElement = document.getElementById('mylives');
 
+
 /*----------- cached element references ----------*/
 
 alphabet.forEach(letter => {
@@ -143,7 +144,6 @@ const randomIndex = Math.floor(Math.random() * wordArray.length);
 return wordArray[randomIndex];
 }
 
-
 function createAlphabetButtons() {
 const alphabetButtonsContainer = document.getElementById('buttons');
 alphabetButtonsContainer.innerHTML = '';
@@ -171,3 +171,38 @@ clueElement.textContent = `Your hint - ${getHint}`;
 
 myLivesElement.textContent = `Lives: ${lives}`;
 }
+function restartGame() {
+chosenCategory = null;
+getHint = null;
+word = null;
+guess = null;
+guesses = [];
+lives = 0;
+counter = 0;
+space = 0;
+
+holdElement.textContent = '';
+categoryNameElement.textContent = 'Choose a category';
+clueElement.textContent = '';
+myLivesElement.textContent = 'Lives: 0';
+
+const alphabetButtons = document.querySelectorAll('#buttons button');
+alphabetButtons.forEach((button) => {
+button.disabled = false;
+});
+
+const categoryButtons = document.querySelectorAll('.category-button');
+categoryButtons.forEach((button) => {
+button.removeEventListener('click', handleCategoryButtonClick);
+});
+
+categories.forEach((category) => {
+const button = document.createElement('button');
+button.className = 'category-button';
+button.textContent = category.name;
+button.addEventListener('click', () => handleCategoryButtonClick(category));
+buttonsContainer.appendChild(button);
+});
+}
+const restartButton = document.getElementById('restartButton');
+restartButton.addEventListener('click', restartGame);
