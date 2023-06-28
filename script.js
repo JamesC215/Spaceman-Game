@@ -72,7 +72,6 @@ button.addEventListener('click', () => handleCategoryButtonClick(category));
 buttonsContainer.appendChild(button);
 });
 
-hintButton.addEventListener('click', handleHintButtonClick);
 /*------------ event listeners -----------*/
 
 /*--------------- functions -----------*/
@@ -144,10 +143,7 @@ const randomIndex = Math.floor(Math.random() * wordArray.length);
 return wordArray[randomIndex];
 }
 
-function getRandomHint(hintArray) {
-const randomIndex = Math.floor(Math.random() * hintArray.length);
-return hintArray[randomIndex];
-}
+
 function createAlphabetButtons() {
 const alphabetButtonsContainer = document.getElementById('buttons');
 alphabetButtonsContainer.innerHTML = '';
