@@ -51,6 +51,7 @@ buttonsContainer.appendChild(button);
 
 categories.forEach(category => {
 const button = document.createElement('button');
+button.className = 'category-button'; 
 button.textContent = category.name;
 button.addEventListener('click', () => handleCategoryButtonClick(category));
 buttonsContainer.appendChild(button);
@@ -72,6 +73,13 @@ render();
 createAlphabetButtons();
 }
 
+function disableAlphabetButtons() {
+const alphabetButtons = document.querySelectorAll('#buttons button');
+alphabetButtons.forEach(button => {
+button.disabled = true;
+});
+}
+
 function handleHintButtonClick() {
 getHint = getRandomHint(chosenCategory.hints);
 render();
@@ -83,9 +91,21 @@ guesses.push(letter);
 if (word.indexOf(letter) === -1) {
 lives--;
 } else {
+// Check if the guessed letter is correct
+let correctGuess = false;
+for (let i = 0; i < word.length; i++) {
+if (word[i] === letter) {
+correctGuess = true;
 counter++;
+holdElement.textContent = holdElement.textContent.slice(0, 2 * i) + letter + holdElement.textContent.slice(2 * i + 1);
 }
 }
+if (!correctGuess) {
+lives--;
+}
+}
+}
+render();
 
 if (counter === word.length) {
 // Word guessed correctly
@@ -107,13 +127,28 @@ function getRandomHint(hintArray) {
 const randomIndex = Math.floor(Math.random() * hintArray.length);
 return hintArray[randomIndex];
 }
+function createAlphabetButtons() {
+const alphabetButtonsContainer = document.getElementById('buttons');
+alphabetButtonsContainer.innerHTML = '';
+
+alphabet.forEach(letter => {
+const button = document.createElement('button');
+button.textContent = letter;
+button.addEventListener('click', () => handleButtonClick(letter));
+alphabetButtonsContainer.appendChild(button);
+});}
 
 function render() {
-categoryNameElement.textContent = chosenCategory.name;
-if (getHint) {
-clueElement.textContent = `Your hint - ${getHint}`;
-} else {
-clueElement.textContent = '';
+categoryNameElement.textContent = "You chose category: " + chosenCategory.name;
+
+holdElement.textContent = '';
+for (let i = 0; i < word.length; i++) {
+  if (guesses.includes(word[i])) {
+    holdElement.textContent += word[i] + ' ';
+  } else {
+    holdElement.textContent += '_ ';
+  }
 }
 
+myLivesElement.textContent = `Lives: ${lives}`;
 }
