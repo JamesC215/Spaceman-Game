@@ -102,6 +102,9 @@ render();
 }
 
 function handleButtonClick(letter) {
+const clickedButton = document.querySelector(`button[data-letter="${letter}"]`);
+clickedButton.disabled = true;
+
 if (guesses.indexOf(letter) === -1) {
 guesses.push(letter);
 if (word.indexOf(letter) === -1) {
@@ -152,6 +155,7 @@ alphabetButtonsContainer.innerHTML = '';
 alphabet.forEach(letter => {
 const button = document.createElement('button');
 button.textContent = letter;
+button.dataset.letter = letter;
 button.addEventListener('click', () => handleButtonClick(letter));
 alphabetButtonsContainer.appendChild(button);
 });}
