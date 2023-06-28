@@ -7,18 +7,33 @@ let alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h',
 let categories = [
 {
 name: 'Animals',
-words: ['lion', 'elephant', 'giraffe', 'penguin', 'dolphin'],
-hints: ['The king of the jungle.', 'The largest land mammal.', 'Known for its long neck.', 'A flightless bird that lives in Antarctica.', 'A highly intelligent marine mammal.']
+words: [
+{ word: 'lion', hint: 'The king of the jungle.' },
+{ word: 'elephant', hint: 'The largest land mammal.' },
+{ word: 'giraffe', hint: 'Known for its long neck.' },
+{ word: 'penguin', hint: 'A flightless bird that lives in Antarctica.' },
+{ word: 'dolphin', hint: 'A highly intelligent marine mammal.' }
+]
 },
 {
 name: 'Fruits',
-words: ['apple', 'banana', 'orange', 'strawberry', 'watermelon'],
-hints: ['A round and juicy fruit.', 'A yellow fruit with a curved shape.', 'A citrus fruit with a bright color.', 'A small, sweet fruit often used in desserts.', 'A large fruit with a refreshing red flesh.']
+words: [
+{ word: 'apple', hint: 'A round and juicy fruit.' },
+{ word: 'banana', hint: 'A yellow fruit with a curved shape.' },
+{ word: 'orange', hint: 'A citrus fruit with a bright color.' },
+{ word: 'strawberry', hint: 'A small, sweet fruit often used in desserts.' },
+{ word: 'watermelon', hint: 'A large fruit with a refreshing red flesh.' }
+]
 },
 {
 name: 'Countries',
-words: ['unitedstates', 'japan', 'brazil', 'australia', 'egypt'],
-hints: ['The land of the free and the home of the brave.', 'Known for its rich cultural heritage and advanced technology.', 'Famous for its vibrant Carnival and beautiful beaches.', 'A country known for its unique wildlife, such as kangaroos and koalas.', 'Home to the ancient pyramids and the Nile River.']
+words: [
+{ word: 'unitedstates', hint: 'The land of the free and the home of the brave.' },
+{ word: 'japan', hint: 'Known for its rich cultural heritage and advanced technology.' },
+{ word: 'brazil', hint: 'Famous for its vibrant Carnival and beautiful beaches.' },
+{ word: 'australia', hint: 'A country known for its unique wildlife, such as kangaroos and koalas.' },
+{ word: 'egypt', hint: 'Home to the ancient pyramids and the Nile River.' }
+]
 }
 ];
 
@@ -63,8 +78,9 @@ hintButton.addEventListener('click', handleHintButtonClick);
 /*--------------- functions -----------*/
 function handleCategoryButtonClick(category) {
 chosenCategory = category;
-word = getRandomWord(category.words);
-getHint = getRandomHint(category.hints);
+const randomIndex = Math.floor(Math.random() * category.words.length);
+word = category.words[randomIndex].word;
+getHint = category.words[randomIndex].hint;
 lives = 6;
 counter = 0;
 space = 0;
@@ -81,7 +97,7 @@ button.disabled = true;
 }
 
 function handleHintButtonClick() {
-getHint = getRandomHint(chosenCategory.hints);
+getHint = chosenCategory.words.find(wordObj => wordObj.word === word).hint;
 render();
 }
 
@@ -110,11 +126,13 @@ render();
 if (counter === word.length) {
 // Word guessed correctly
 disableAlphabetButtons();
+holdElement.textContent = "You win!";
 }
 
 if (lives === 0) {
 // Game over, word not guessed
 disableAlphabetButtons();
+holdElement.textContent = "You ran out of lives!";
 }
 }
         
@@ -149,6 +167,7 @@ for (let i = 0; i < word.length; i++) {
     holdElement.textContent += '_ ';
   }
 }
+clueElement.textContent = `Your hint - ${getHint}`;
 
 myLivesElement.textContent = `Lives: ${lives}`;
 }
