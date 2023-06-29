@@ -50,7 +50,7 @@ div {
   margin-left: auto;
   align-items: flex-end;
   position: fixed;
-  bottom: 100px; 
+  bottom: 75px; 
   left: 50%; 
   transform: translateX(-50%); 
   }
@@ -75,8 +75,8 @@ div {
     flex-direction: row;
     text-align: center;
     font-size: 30px;
-    margin-bottom: 150px;
-    margin-top: 150px;
+    margin-bottom: 20px;
+    margin-top: 50px;
     border: 10px red;
   }
   .category-button {
