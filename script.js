@@ -55,6 +55,7 @@ const clueElement = document.getElementById('clue');
 const hintButton = document.getElementById('hint');
 const holdElement = document.getElementById('hold');
 const myLivesElement = document.getElementById('mylives');
+const lifeLostSound = document.getElementById('lifeLostSound');
 
 /*----------- cached element references ----------*/
 
@@ -106,6 +107,7 @@ if (guesses.indexOf(letter) === -1) {
 guesses.push(letter);
 if (word.indexOf(letter) === -1) {
 lives--;
+lifeLostSound.play();
 } else {
 // Check if the guessed letter is correct
 let correctGuess = false;
@@ -135,6 +137,7 @@ disableAlphabetButtons();
 holdElement.textContent = "You ran out of lives!";
 }
 }
+
 
 //Get random word from chosen category        
 function getRandomWord(wordArray) {
