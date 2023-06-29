@@ -1,30 +1,20 @@
 # Spaceman Game
 
--Example of wireframe for the game
+Here is the link to my game: https://jamesc215.github.io/Spaceman-Game/
+## ****Breakdown of the game and what it does:****
 
--Examples of other Hangman/Spaceman games 
+-Word guessing game - name was changed to Spaceman instead of Hangman to divert away from the negative connotations of “Hang”-man.
 
-***These are both in the link ***
-[Wireframe and Pseudocode.docx](https://github.com/JamesC215/Spaceman-Game/files/11867333/Wireframe.and.Pseudocode.docx)
-
-### ****Breakdown of the game and what it does:****
-
--Spaceman/Hangman game - name was changed to Spaceman instead of Hangman to divert away from the negative connotations of “Hang”-man.
-
--Generate a random string of hidden letters from a list of categories.
+-Generate a random string of hidden letters from a list of categories the player has to choose from.
 
 -Players have to choose letters from the alphabet to guess the word.
 
 -Hidden letters until a letter is guessed, then reveal each letter if/when they are guessed.
 
--Spaceship in the middle will build after each wrong guess.
-
--Once the spaceship is built or the correct answer is guessed, the game will end!
+-Once the correct answer is guessed, the game will end!
 
 
-### ****Potential/Icebox features:****
-
--Player can choose their own category
+## ****Potential/Icebox features:****
 
 -Adding space themed sounds each time a button is pressed.
 
@@ -32,9 +22,10 @@
 
 -Adding images to create a more space style theme.
 
+-Adding a spaceship that builds piece by piece each time a player loses a life.
 
 
-### ****Plan to tackle the problem****
+## ****Plan to tackle the problem****
 
 -Start with basic HTML, linking both the JavaScript and CSS files to the index.html page.
 
@@ -50,6 +41,10 @@
 */----variables----*/
 */----event listeners----*/
 */----functions----*/
+
+## In its early stages
+
+See below a screenshot of an early stage of the game
 
 
 
