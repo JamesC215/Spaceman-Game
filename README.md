@@ -1,6 +1,12 @@
 # Spaceman Game
 
 Here is the link to my game: https://jamesc215.github.io/Spaceman-Game/
+## User requirements:
+
+- A computer/phone with access to the internet.
+- The link above.
+- That's it!
+
 ## ****Breakdown of the game and what it does:****
 
 -Word guessing game - name was changed to Spaceman instead of Hangman to divert away from the negative connotations of “Hang”-man.
@@ -42,6 +48,22 @@ Here is the link to my game: https://jamesc215.github.io/Spaceman-Game/
 */----event listeners----*/
 */----functions----*/
 
+## Technologies used:
+GitHub:
+- Create repository and allow Project to be pushed from Local to Server
+
+Dev tools:
+- VS code - HTML, CSS and JavaScript editor
+- Terminal/Command Line - push/pull/commit to GitHub repository
+- Google Chrome Dev Tools
+
+Wireframe:
+- I used https://excalidraw.com/
+
+Images and Fonts:
+- Google Images
+- Google Fonts
+
 ## Wireframe before beginning the game
 
 <img width="1325" alt="Screenshot 2023-06-22 at 20 49 20" src="https://github.com/JamesC215/Spaceman-Game/assets/136309778/fbaf605f-59ab-409c-9c27-5cb51736d99b">
@@ -64,6 +86,20 @@ See below a screenshot of an early stage of the game:
 
 - This is my game on day 3. I hit a few speedbumps on this day, mainly with the correct rendering of the category buttons and also ensuring that my reset button worked.
 - I added a lot of CSS styling on this day, keeping to a classic game browser feel with the use of a relevant "Spaceman" themed background and also with coloring etc.
+
+## My MVP
+
+<img width="1415" alt="Screenshot 2023-06-29 at 12 07 30" src="https://github.com/JamesC215/Spaceman-Game/assets/136309778/b009ba00-d9ac-44e2-808c-cf45290ac2e5">
+
+- This is my game on the final day of the project. I fixed the restart button so that it resets the categories anytime during and after the game, and the category buttons rendered correctly.
+- I am content with the game at this stage, however, I have a lot of things I would still like to add in future.
+
+## Future Development/Icebox features
+- My initial plan was to have a spaceship that builds after each life lost, but I did not have the technical skill/time to do it.
+- Adding more categories/more words to each category.
+- Add the hint button as an option only if the player needs it (it currently renders with the category).
+- Add CSS media queries that render the game correctly on each platform it is used on.
+
 
 
 
