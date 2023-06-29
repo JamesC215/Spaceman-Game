@@ -1,20 +1,41 @@
 * {
-    color: red;
+    color: #F9DBBB;
+    max-height: 100vh;
+    box-sizing: border-box;
+    font-family: 'Space Mono', monospace;
 }
-/* body {
-    background-image: url("https://i.pinimg.com/originals/91/12/37/911237dbd125af2fee218012c166ce5c.jpg");
+body {
+    background-image: url(https://a-static.besthdwallpaper.com/black-and-white-skull-astronaut-wallpaper-2736x1824-91679_41.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: left;
-  } */
+    background-color: black;
+    background-attachment: fixed;
+  }
   
-h1, h2, p {
-    font-family: 'Open Sans', sans-serif;
+  h1 {
     text-align: center;
     display: flex;
     flex-direction: row;
     justify-content: center;
-  
+    font-size: 50px;
+    margin: 0;
+  }
+  h2 {
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 0;
+  }
+ p {
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    font-weight: 600;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 div {
     display: flex;
@@ -22,18 +43,23 @@ div {
     justify-content: center;
 }
 #buttons {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 10px;
-    margin-right: auto;
-    margin-left: 20px;
-    justify-items: center;
+  display: table-cell;
+  width: 50%;
+  grid-gap: 20px;
+  margin-right: auto;
+  margin-left: auto;
+  align-items: flex-end;
+  position: fixed;
+  bottom: 80px; 
+  left: 50%; 
+  transform: translateX(-50%); 
   }
   #buttons button {
-    width: 50px;
+    width: 90px;
     height: 50px;
     font-size: 16px;
-    border-radius: 12px;
+    border-radius: 50px;
+    color: lightcoral
   }
   button {
     margin-left: auto;
@@ -41,22 +67,39 @@ div {
   }
   .wrap {
     text-align: center;
+    border: 10px black;
   }
-  
-  .categories {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
-  }
-  
   #hold {
-    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
     text-align: center;
+    font-size: 30px;
+    margin-bottom: 30px;
+    margin-top: 30px;
+    border: 10px red;
   }
   .category-button {
-    background-color: aqua;
-    display: inline-block;
-    border: solid red 2px;
-    border-radius: 12px;
+    display: flex;
+    justify-content: center;
     align-items: center;
+    border-radius: 20px;
+    height: 50px;
+    width: 50px;
+    margin-top: 20px;
+    color: white;
+    background-image: url(https://mir-s3-cdn-cf.behance.net/project_modules/1400_opt_1/d9d7ad104360973.5f6142500e188.png);
+    background-size: contain;
   }
+  #restartButton {
+    position: fixed;
+    font-size: 20px;
+    bottom: 20px; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    border-radius: 12px;
+    width: 120px;
+    height: 50px;
+    color: lightcoral;
+    background-image:url(https://mir-s3-cdn-cf.behance.net/project_modules/1400_opt_1/d9d7ad104360973.5f6142500e188.png);
+  }
+

@@ -40,9 +40,9 @@ words: [
 let chosenCategory;     // Selected catagory
 var getHint ;           // Word getHint
 let word ;              // Selected word
-let guess ;             // Player Guess
-let guesses = [ ];      // Stored geusses
-let lives ;             // Livess
+let guess ;             // Player guess
+let guesses = [ ];      // Stored guesses
+let lives ;             // Lives
 let counter ;           // Count correct guesses
 let space;              // Number of spaces in word '-'
 
@@ -55,9 +55,7 @@ const hintButton = document.getElementById('hint');
 const holdElement = document.getElementById('hold');
 const myLivesElement = document.getElementById('mylives');
 
-
 /*----------- cached element references ----------*/
-
 alphabet.forEach(letter => {
 const button = document.createElement('button');
 button.textContent = letter;
@@ -73,7 +71,6 @@ button.addEventListener('click', () => handleCategoryButtonClick(category));
 buttonsContainer.appendChild(button);
 });
 
-/*------------ event listeners -----------*/
 
 /*--------------- functions -----------*/
 function handleCategoryButtonClick(category) {
@@ -94,11 +91,6 @@ const alphabetButtons = document.querySelectorAll('#buttons button');
 alphabetButtons.forEach(button => {
 button.disabled = true;
 });
-}
-
-function handleHintButtonClick() {
-getHint = chosenCategory.words.find(wordObj => wordObj.word === word).hint;
-render();
 }
 
 function handleButtonClick(letter) {
@@ -171,6 +163,7 @@ clueElement.textContent = `Your hint - ${getHint}`;
 
 myLivesElement.textContent = `Lives: ${lives}`;
 }
+
 function restartGame() {
 chosenCategory = null;
 getHint = null;
@@ -182,9 +175,9 @@ counter = 0;
 space = 0;
 
 holdElement.textContent = '';
-categoryNameElement.textContent = 'Choose a category';
+categoryNameElement.textContent = 'Re-choose your category to start again';
 clueElement.textContent = '';
-myLivesElement.textContent = 'Lives: 0';
+myLivesElement.textContent = '';
 
 const alphabetButtons = document.querySelectorAll('#buttons button');
 alphabetButtons.forEach((button) => {
