@@ -45,7 +45,7 @@ Here is the link to my game: https://jamesc215.github.io/Spaceman-Game/
 ## In its early stages
 
 See below a screenshot of an early stage of the game
-
+![ScreenShot](https://raw.github.com/{JamesC215}/{Spaceman-Game}/{main}/{path})
 
 
 
