@@ -42,6 +42,13 @@ Here is the link to my game: https://jamesc215.github.io/Spaceman-Game/
 */----event listeners----*/
 */----functions----*/
 
+## Wireframe before beginning the game
+
+<img width="1325" alt="Screenshot 2023-06-22 at 20 49 20" src="https://github.com/JamesC215/Spaceman-Game/assets/136309778/fbaf605f-59ab-409c-9c27-5cb51736d99b">
+
+- This is my basic Wireframe before starting the game. Upon completion, I had a basic idea of what my game could potentially look like when it is finished.
+- My finished game, however, looked different due to both technical issues and also changing my mind on certain ideas.
+
 ## In its early stages
 
 See below a screenshot of an early stage of the game
