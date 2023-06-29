@@ -50,7 +50,7 @@ div {
   margin-left: auto;
   align-items: flex-end;
   position: fixed;
-  bottom: 80px; 
+  bottom: 100px; 
   left: 50%; 
   transform: translateX(-50%); 
   }
@@ -59,7 +59,8 @@ div {
     height: 50px;
     font-size: 16px;
     border-radius: 50px;
-    color: lightcoral
+    color: lightcoral;
+    margin-bottom: 10px;
   }
   button {
     margin-left: auto;
@@ -74,8 +75,8 @@ div {
     flex-direction: row;
     text-align: center;
     font-size: 30px;
-    margin-bottom: 30px;
-    margin-top: 30px;
+    margin-bottom: 150px;
+    margin-top: 150px;
     border: 10px red;
   }
   .category-button {

@@ -4,6 +4,7 @@ let alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h',
         'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's',
         't', 'u', 'v', 'w', 'x', 'y', 'z'];
 
+//Create categories through objects/arrays
 let categories = [
 {
 name: 'Animals',
@@ -37,7 +38,7 @@ words: [
 }
 ];
 
-let chosenCategory;     // Selected catagory
+let chosenCategory;     // Selected category
 var getHint ;           // Word getHint
 let word ;              // Selected word
 let guess ;             // Player guess
@@ -56,6 +57,8 @@ const holdElement = document.getElementById('hold');
 const myLivesElement = document.getElementById('mylives');
 
 /*----------- cached element references ----------*/
+
+//Create buttons from alphabet
 alphabet.forEach(letter => {
 const button = document.createElement('button');
 button.textContent = letter;
@@ -63,6 +66,7 @@ button.addEventListener('click', () => handleButtonClick(letter));
 buttonsContainer.appendChild(button);
 });
 
+//Create buttons for each category
 categories.forEach(category => {
 const button = document.createElement('button');
 button.className = 'category-button'; 
@@ -73,6 +77,7 @@ buttonsContainer.appendChild(button);
 
 
 /*--------------- functions -----------*/
+//When category buttons are pressed
 function handleCategoryButtonClick(category) {
 chosenCategory = category;
 const randomIndex = Math.floor(Math.random() * category.words.length);
@@ -92,7 +97,7 @@ alphabetButtons.forEach(button => {
 button.disabled = true;
 });
 }
-
+//Function to click on each button and add/do not add if correct/incorrect
 function handleButtonClick(letter) {
 const clickedButton = document.querySelector(`button[data-letter="${letter}"]`);
 clickedButton.disabled = true;
@@ -130,12 +135,13 @@ disableAlphabetButtons();
 holdElement.textContent = "You ran out of lives!";
 }
 }
-        
+
+//Get random word from chosen category        
 function getRandomWord(wordArray) {
 const randomIndex = Math.floor(Math.random() * wordArray.length);
 return wordArray[randomIndex];
 }
-
+//Create alphabet buttons through DOM
 function createAlphabetButtons() {
 const alphabetButtonsContainer = document.getElementById('buttons');
 alphabetButtonsContainer.innerHTML = '';
@@ -148,6 +154,7 @@ button.addEventListener('click', () => handleButtonClick(letter));
 alphabetButtonsContainer.appendChild(button);
 });}
 
+//Render game after category is chosen
 function render() {
 categoryNameElement.textContent = "You chose category: " + chosenCategory.name;
 
