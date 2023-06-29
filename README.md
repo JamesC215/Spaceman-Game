@@ -58,6 +58,15 @@ See below a screenshot of an early stage of the game:
 - This is my game after day 1 of the project.
 - I made this through basic HTML, with a bit of CSS styling to assist me visually, and I created my alphabet and restart button through DOM Manipulation (my restart button was an empty button at this point)
 
+## During Development
+
+<img width="1410" alt="Screenshot 2023-06-29 at 09 57 27" src="https://github.com/JamesC215/Spaceman-Game/assets/136309778/8d6d6f02-872f-485c-9826-482e3fbea241">
+
+- This is my game on day 3. I hit a few speedbumps on this day, mainly with the correct rendering of the category buttons and also ensuring that my reset button worked.
+- I added a lot of CSS styling on this day, keeping to a classic game browser feel with the use of a relevant "Spaceman" themed background and also with coloring etc.
+
+
+
 
 
 
