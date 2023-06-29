@@ -51,8 +51,12 @@ Here is the link to my game: https://jamesc215.github.io/Spaceman-Game/
 
 ## In its early stages
 
-See below a screenshot of an early stage of the game
+See below a screenshot of an early stage of the game:
 
+<img width="1432" alt="Screenshot 2023-06-29 at 09 30 55" src="https://github.com/JamesC215/Spaceman-Game/assets/136309778/f50f9f1c-8e49-4c5f-8c5e-1a9b39a1d21d">
+
+- This is my game after day 1 of the project.
+- I made this through basic HTML, with a bit of CSS styling to assist me visually, and I created my alphabet and restart button through DOM Manipulation (my restart button was an empty button at this point)
 
 
 
